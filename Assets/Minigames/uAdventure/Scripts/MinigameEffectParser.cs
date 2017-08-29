@@ -1,23 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 using uAdventure.Core;
-
+using System;
+using System.Xml;
 
 namespace uAdventure.Minigame
 {
-[DOMParser(typeof(MinigameEffect))]
-[DOMParser("launch-minigame")]
-public class MinigameEffectParser : IDOMParser {
-	#region IDOMParser implementation
-
-	public object DOMParse (System.Xml.XmlElement element, params object[] parameters)
+	[DOMParser(typeof(MinigameEffect))]
+	[DOMParser("minigameEffect")]
+	public class MinigameEffectParser : IDOMParser
 	{
-		//var chapter = parameters [0] as Chapter;
-
-		return new MinigameEffect ();
-	} 
-
-	#endregion
-}
+		public object DOMParse(XmlElement element, params object[] parameters)
+		{
+			var effect = new MinigameEffect(element.Attributes["idTarget"].Value);
+			effect.setConditions (DOMParserUtility.DOMParse (element.SelectSingleNode ("condition"), parameters) as Conditions ?? new Conditions ());
+			return effect;
+		}
+	}
 }

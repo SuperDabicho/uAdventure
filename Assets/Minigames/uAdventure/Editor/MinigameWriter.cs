@@ -19,8 +19,14 @@ namespace uAdventure.Minigame
 			element.SetAttribute("id", mg.Id);
 			AddNode(element, "content", mg.Content);
 			AddNode(element, "documentation", mg.Documentation);
-			AddNode (element, "preguntas", mg.printPretty(mg.Preguntas));
-			AddNode (element, "respuestas", mg.printPretty(mg.Respuestas));
+			XmlElement pre=AddNode (element, "preguntas","");
+			foreach (var i in mg.Preguntas) {
+				AddNode(pre, "item", i);
+			}
+			XmlElement resp=AddNode (element, "respuestas","");
+			foreach (var i in mg.Respuestas) {
+				AddNode(resp, "item", i);
+			}
 			DOMWriterUtility.DOMWrite(element, mg.Conditions);
 			DOMWriterUtility.DOMWrite(element, mg.Effects);
 		}
