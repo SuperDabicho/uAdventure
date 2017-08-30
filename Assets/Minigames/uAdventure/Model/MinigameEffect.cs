@@ -8,10 +8,11 @@ namespace uAdventure.Minigame
 {
 	public class MinigameEffect : AbstractEffect
 	{
+		public enum ListType { BlackList, WhiteList }
 
-		public MinigameEffect(string minigameId)
+		public MinigameEffect()
 		{
-			this.minigameId = minigameId;
+			ValidIds = new List<string>();
 		}
 
 		public override EffectType getType()
@@ -19,19 +20,8 @@ namespace uAdventure.Minigame
 			return EffectType.CUSTOM_EFFECT;
 		}
 
-		public void setMinigameId (string minigameId){
-			this.minigameId = minigameId;
-		}
-
-
-		public string getMinigameId(){
-			return this.minigameId;
-		}
-
-
-		public string minigameId;
-
-
-
+		public string PromptMessage { get; set; }
+		public List<string> ValidIds { get; set; }
+		public ListType SelectionType { get; set; }
 	}
 }

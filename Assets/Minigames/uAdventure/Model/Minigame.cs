@@ -10,8 +10,8 @@ namespace uAdventure.Minigame
 			Id = id;
 			Conditions = new Conditions();
 			Effects = new Effects();
-			Respuestas = new string[0];
-			Preguntas = new string[0];
+			Respuestas = new string[4];
+			Preguntas = new string[4];
 		}
 			
 		public string Id { get; set; }
@@ -65,6 +65,14 @@ namespace uAdventure.Minigame
 
 		}
 
+		public string printPretty(string[] lista){
+
+			string s = "";
+			foreach (var i in lista) {
+				s+="<item>"+i+"</item>\n";
+			}
+			return s;
+		}
 
 		public void delOption(){
 
