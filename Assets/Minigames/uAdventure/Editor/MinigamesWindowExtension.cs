@@ -18,7 +18,7 @@ namespace uAdventure.Minigame
 
 
 			// Button
-			content.image = (Texture2D) Resources.Load("EAdventureData/img/icons/items", typeof(Texture2D));
+			content.image = (Texture2D) Resources.Load("minigame", typeof(Texture2D));
 			content.text = "Minigames";
 			ButtonContent = content;
 		}
@@ -96,63 +96,6 @@ namespace uAdventure.Minigame
 			GUILayout.Space (20);
 			GUILayout.EndVertical ();
 
-			GUILayout.BeginHorizontal ();
-			{
-				GUILayout.Space (0.05f * windowWidth);
-
-				if (GUILayout.Button ("Discard changes", GUILayout.Width(0.4f*windowWidth))) 
-				{
-					Debug.Log ("boton Discard. guarda el minigame en el archivo de conf");
-					//selectedMinigame.setId (idName);
-				}
-
-				GUILayout.Space (0.1f * windowWidth);
-
-				if (GUILayout.Button ("Save changes", GUILayout.Width(0.4f*windowWidth))) 
-				{
-					Debug.Log ("boton Save. carga de nuevo el archivo de conf");
-					//selectedMinigame.setId (idName);
-				}
-
-			}
-			GUILayout.EndHorizontal ();
-			/*
-
-			EditorGUILayout.BeginVertical ();
-			{
-				EditorGUI.BeginChangeCheck ();
-				GUILayout.BeginArea (panelAll);
-				string idName = EditorGUILayout.DelayedTextField ("Minigame Name", selectedMinigame.getId());
-				GUILayout.EndArea ();
-				//Initialize the first text field		
-				//if(EditorGUI.EndChangeCheck()){}
-
-
-
-				GUILayout.BeginArea (optionsPanelRect);
-				for (int i = 0; i < selectedMinigame.Preguntas.Length; i++) {
-					selectedMinigame.Preguntas [i] = EditorGUILayout.DelayedTextField ("Option" + i, selectedMinigame.Preguntas [i]);
-				}
-				GUILayout.EndArea ();
-
-				GUILayout.BeginArea (answersPanelRect);
-				for (int i = 0; i < selectedMinigame.Respuestas.Length; i++) {
-					selectedMinigame.Respuestas [i] = EditorGUILayout.DelayedTextField ("Answer" + i, selectedMinigame.Respuestas [i]);
-				}
-				GUILayout.EndArea ();
-		
-				GUILayout.BeginArea (panelFin);
-				EditorGUILayout.LabelField("Documentation");
-				selectedMinigame.Documentation = EditorGUILayout.TextArea(selectedMinigame.Documentation,GUILayout.Height(20));
-
-				if (GUILayout.Button("Save changes"))
-				{
-					Debug.Log ("boton save hanges minigame nuevo");
-					selectedMinigame.setId (idName);
-				}
-				GUILayout.EndArea ();
-			}
-			EditorGUILayout.EndVertical ();*/
 		
 		}
 			

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE eAdventure PUBLIC "SYSTEM" "eadventure.dtd">
+<eAdventure>
+  <scene id="inicial" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <resources name="">
+      <asset type="background" uri="assets/background/inicial.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="300" />
+    <active-areas>
+      <active-area id="IdObject" rectangular="yes" x="346" y="264" width="100" height="100" hasInfluenceArea="no">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no" />
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <launch-minigame />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+  <player>
+    <resources name="">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#00000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </player>
+  <player>
+    <resources name="">
+      <asset type="standup" uri="assets/special/EmptyAnimation" />
+      <asset type="standdown" uri="assets/special/EmptyAnimation" />
+      <asset type="standright" uri="assets/special/EmptyAnimation" />
+      <asset type="standleft" uri="assets/special/EmptyAnimation" />
+      <asset type="speakup" uri="assets/special/EmptyAnimation" />
+      <asset type="speakdown" uri="assets/special/EmptyAnimation" />
+      <asset type="speakright" uri="assets/special/EmptyAnimation" />
+      <asset type="speakleft" uri="assets/special/EmptyAnimation" />
+      <asset type="useright" uri="assets/special/EmptyAnimation" />
+      <asset type="useleft" uri="assets/special/EmptyAnimation" />
+      <asset type="walkup" uri="assets/special/EmptyAnimation" />
+      <asset type="walkdown" uri="assets/special/EmptyAnimation" />
+      <asset type="walkright" uri="assets/special/EmptyAnimation" />
+      <asset type="walkleft" uri="assets/special/EmptyAnimation" />
+    </resources>
+    <textcolor showsSpeechBubble="no" bubbleBkgColor="#FFFFFF" bubbleBorderColor="#00000">
+      <frontcolor color="#FFFFFF" />
+      <bordercolor color="#000000" />
+    </textcolor>
+    <description>
+      <name>
+      </name>
+      <brief>
+      </brief>
+      <detailed>
+      </detailed>
+    </description>
+    <voice name="" synthesizeAlways="no" />
+  </player>
+  <scene id="inicial" start="yes" playerLayer="-1" playerScale="1" class="accesible" type="area">
+    <resources name="">
+      <asset type="background" uri="assets/background/inicial.png" />
+    </resources>
+    <name>
+    </name>
+    <default-initial-position x="400" y="300" />
+    <active-areas>
+      <active-area id="IdObject" rectangular="yes" x="346" y="264" width="100" height="100" hasInfluenceArea="no">
+        <description>
+          <name>
+          </name>
+          <brief>
+          </brief>
+          <detailed>
+          </detailed>
+        </description>
+        <actions>
+          <examine needsGoTo="no" keepDistance="0" not-effects="no" />
+          <use needsGoTo="yes" keepDistance="35" not-effects="no">
+            <effect>
+              <launch-minigame />
+              <condition />
+            </effect>
+          </use>
+        </actions>
+      </active-area>
+    </active-areas>
+  </scene>
+</eAdventure>

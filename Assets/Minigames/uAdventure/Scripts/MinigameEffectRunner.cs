@@ -9,14 +9,15 @@ namespace uAdventure.Minigame
 	public class MinigameEffectRunner : CustomEffectRunner {
 
 		MinigameEffect effect;
-		//private GameObject QRPromptPrefab;
-		//private QRPrompt prompt;
+		private GameObject mgPrefab;
+		private MinigamePrompt prompt;
 		bool first;
+	
 
 		public MinigameEffectRunner()
 		{
 			first = true;
-			//QRPromptPrefab = Resources.Load<GameObject>("QRPrompt");
+			mgPrefab = Resources.Load<GameObject>("mgPrompt");
 		}
 
 		#region Secuence implementation
@@ -26,10 +27,12 @@ namespace uAdventure.Minigame
 			if (first)
 			{
 				first = false;
-				//prompt = GameObject.Instantiate(QRPromptPrefab).GetComponent<QRPrompt>();
-				//prompt.Effect = this.Effect;
+				effect = (MinigameEffect)Effect;
+				mgPrefab.GetComponent<MinigamePrompt> ().idMinigame = effect.getMinigameId();
+				prompt = GameObject.Instantiate(mgPrefab).GetComponent<MinigamePrompt>();
+				prompt.Effect = this.Effect;
 			}
-			return first;
+			return prompt && prompt.execute();
 		}
 
 		#endregion

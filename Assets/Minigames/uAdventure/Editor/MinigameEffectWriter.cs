@@ -1,16 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using uAdventure.Editor;
+using System;
+using System.Xml;
 
-public class MinigameWriter : MonoBehaviour {
+namespace uAdventure.Minigame
+{
+	[DOMWriter(typeof(MinigameEffect))]
+	public class MinigameEffectWriter : ParametrizedDOMWriter
+	{
+		protected override void FillNode(XmlNode node, object target, params IDOMWriterParam[] options)
+		{
+			var element = node as XmlElement;
+			var effect = target as MinigameEffect;
+			element.SetAttribute("idTarget", effect.minigameId);
+			DOMWriterUtility.DOMWrite(element, effect.getConditions());
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		}
+
+		protected override string GetElementNameFor(object target)
+		{
+			return "minigameEffect";
+		}
 	}
 }
