@@ -38,34 +38,44 @@ public class TodoPoderoso : MonoBehaviour {
 	}
 	//fondo.GetComponent<Renderer>().material.color = new Color(255, 0, 0);
 
-//	void OnTriggerEnter2D(Collider2D other){
-//		if (comprobar (other)) {
-//			transform.GetComponent<TextMesh>().color = Color.green;
-//		} else {
-//			transform.GetComponent<TextMesh>().color = Color.red;
-//		}
-//	}
+	/*
+	void OnTriggerEnter2D(Collider2D other){
+		if (comprobar (other)) {
+			transform.GetComponent<TextMesh>().color = Color.green;
+		} else {
+			transform.GetComponent<TextMesh>().color = Color.red;
+		}
+	}
+	*/
 
 	void OnTriggerStay2D(Collider2D other){ 
 		if (other.GetComponent<Solucion> ().isPregunta()){
 			if (Cursor.visible) {	//Input.GetMouseButtonUp(0) 0-left 1-right 2-middle
 				if (comprobar (other)) {
+					transform.GetComponent<TextMesh> ().color = Color.green;
 					other.transform.GetComponent<TextMesh> ().color = Color.green;
+					other.GetComponent<Solucion>().SetResuelto(true);
+					transform.GetComponent<Solucion>().SetResuelto(true);
 					Vector3 newPosition = new Vector3 (10, other.transform.position.y - 4, 0);
 					transform.position = newPosition;	
 					Destroy (transform.GetComponent<BoxCollider2D> ());//Evita que reaccione la pregunta con otra respuesta si ya esta solucionada.
 					Destroy (other.transform.GetComponent<BoxCollider2D> ());
 				} else {
-					other.transform.GetComponent<TextMesh> ().color = Color.red;
+					transform.GetComponent<TextMesh> ().color = Color.red;
+					Vector3 newPosition = new Vector3 (10, other.transform.position.y - 4, 0);
+					transform.position = newPosition;	
+
 				}
 			}
 		}
 	}
 
+	/*
 	void OnTriggerExit2D(Collider2D other){
 		transform.GetComponent<TextMesh> ().color = Color.white;
 		other.transform.GetComponent<TextMesh> ().color = Color.white;
 	}
+	*/
 
 	bool comprobar(Collider2D other){
 		int correcta= other.GetComponent<Solucion>().GetSolucion();
